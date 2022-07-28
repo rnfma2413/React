@@ -24,7 +24,8 @@ const Index = () => {
     }
 
     return (
-        <>       
+        <>    
+            <img src='logo192.png'></img>  
             <h1>React TODOLIST</h1>     
             <Insert setTodoTxt={setTodoTxt} todoTxt={todoTxt} setInfoData={setInfoData}/>                        
             <Item list={list}  deleteFn={deleteFn}/>
