@@ -30,6 +30,11 @@
 
 .test {
   background-color: aquamarine;
+  width: 70px;
+  height: 35px;
+  cursor: pointer;
+  font-weight:bold;
+  margin-right: 10px;
 }
 
 @keyframes App-logo-spin {

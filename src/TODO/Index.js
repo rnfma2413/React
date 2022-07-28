@@ -12,9 +12,13 @@ const Index = () => {
     const list = useSelector((store) => store.todo.todos);
 
     const setInfoData = () => {
-        const _list = [...list]
-        _list.push(todoTxt)
-        dispatch(todoAction.setTodo(_list))
+        if(todoTxt == ""){
+            alert("데이터가 비었음")
+        }else{
+            const _list = [...list]
+            _list.push(todoTxt)
+            dispatch(todoAction.setTodo(_list))
+        }
     }
 
     const deleteFn = (index) =>{
@@ -23,11 +27,16 @@ const Index = () => {
         dispatch(todoAction.setTodo(_list))
     }
 
+    const deleteAllFn = () =>{
+        const _list = [...list]
+        _list.splice("undefined")
+        dispatch(todoAction.setTodo(_list))
+    }
+
     return (
         <>    
-            <img src='logo192.png'></img>  
-            <h1>React TODOLIST</h1>     
-            <Insert setTodoTxt={setTodoTxt} todoTxt={todoTxt} setInfoData={setInfoData}/>                        
+            <h1><img src='logo192.png' style={{width:50}}></img><span style={{position:"absolute"}}>React</span></h1>     
+            <Insert setTodoTxt={setTodoTxt} todoTxt={todoTxt} setInfoData={setInfoData} deleteAllFn={deleteAllFn}/>                        
             <Item list={list}  deleteFn={deleteFn}/>
         </>
     )
